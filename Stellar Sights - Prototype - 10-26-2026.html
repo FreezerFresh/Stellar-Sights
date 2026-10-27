@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stellar Sights - Exoplanet Search</title>
+</head>
+<body>
+    <h1>Stellar Sights</h1>
+    <p>
+        Search the exoplanet catalog by planet name or host star
+    </p>
+
+    <p>
+        Use Trappistle or Kepler-452 b for example
+    </p>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Enter planet name or host star" autocomplete="off">
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <div id="status" class="status"></div>
+    <div id="results"></div>
+
+    <script type="application/json" id="catalog-data">
+        [
+          {
+            "id": "trappist1e",
+            "planetName": "TRAPPIST-1 e",
+            "hostStar": "TRAPPIST-1"
+          },
+          {
+            "id": "kepler452b",
+            "planetName": "Kepler-452 b",
+            "hostStar": "Kepler-452"
+          }
+        ]
+    </script>
+
+    <script src="Stellar Sights - Prototype - 10-26-2026 - Javascript.js"></script>
+</body>
+</html>
