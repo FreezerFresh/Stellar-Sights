@@ -1,1 +1,12 @@
-
+h1, h2, p {
+    text-align: center;
+}
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+#status {
+    text-align: center;
+    margin-top: 15px;
+}
