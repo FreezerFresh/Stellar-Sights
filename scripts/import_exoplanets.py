@@ -20,6 +20,7 @@ SELECT TOP 20
     pl_orbper
 FROM pscomppars
 WHERE tran_flag = 1
+AND pl_name != 'HD 209458 b'
 ORDER BY pl_name
 """
 
@@ -36,6 +37,33 @@ url = base_url + "?" + urlencode({
 
 # Download NASA data into a Pandas DataFrame
 df = pd.read_csv(url)
+
+# Request HD 209458 b so transit predictions
+# can be linked to an exoplanet in our catalog
+extra_query = """
+SELECT
+    pl_name,
+    hostname,
+    ra,
+    dec,
+    pl_orbper
+FROM pscomppars
+WHERE pl_name = 'HD 209458 b'
+"""
+
+extra_url = base_url + "?" + urlencode({
+    "query": extra_query,
+    "format": "csv"
+})
+
+extra_df = pd.read_csv(extra_url)
+
+# Add the planet to our existing catalog
+df = pd.concat([df, extra_df], ignore_index=True)
+
+# Remove duplicate planet names, if any
+df = df.drop_duplicates(subset=["pl_name"])
+
 
 # Display the first five exoplanets
 print("First five imported exoplanets:")
