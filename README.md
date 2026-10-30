@@ -5,6 +5,14 @@ Creating this file to update my parts of the code that was changed and tweaked
 - Next part to work on is images and planet on transit with a line going through those images (maybe a transparent jpg image...)
 - Made the HTML page more centered to make it look "modern" for my standard (adding in some fluff of the project for now)
 
+10/29/2026
+- Added exoplanets images
+- Path those images to the search bar so they appear with the images
+- If typed HAT-P not the full name it will show all images with the planets itself
+- Tweaked the functions a bit to include images
+- Some of the images are png, jpg and jpeg images 
+
+
 Test Cases
 
 1. Search by planet name: Enter `55 Cnc e` and verify that the matching planet and its information appear.
