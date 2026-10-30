@@ -10,7 +10,12 @@ Creating this file to update my parts of the code that was changed and tweaked
 - Path those images to the search bar so they appear with the images
 - If typed HAT-P not the full name it will show all images with the planets itself
 - Tweaked the functions a bit to include images
-- Some of the images are png, jpg and jpeg images 
+- Some of the images are png, jpg and jpeg images
+
+10/30/2026
+- Presented first scrum cycle
+- Local demo works with planet HD 2 something showing transit events
+- Merge was made into the main branch
 
 
 Test Cases
