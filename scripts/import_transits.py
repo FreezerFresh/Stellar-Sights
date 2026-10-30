@@ -14,7 +14,7 @@ planets = [
 
 columns = [
     "planetname",
-    "midpointcalendar",
+    "midpointcalendar", 
     "midpointjd",
     "propmidpointunc",
     "refname",

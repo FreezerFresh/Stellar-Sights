@@ -1,7 +1,6 @@
 
 import sqlite3
 
-# Connect to the existing SQLite database
 connection = sqlite3.connect("data/stellar_sights.db")
 
 cursor = connection.cursor()
@@ -28,5 +27,4 @@ for row in results:
 
 print("\nTotal matching records:", len(results))
 
-# Close the database
 connection.close()

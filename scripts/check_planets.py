@@ -1,7 +1,6 @@
 
 import sqlite3
 
-# Connect to our existing database
 connection = sqlite3.connect("data/stellar_sights.db")
 
 cursor = connection.cursor()
@@ -13,7 +12,7 @@ FROM exoplanets
 ORDER BY pl_name
 """)
 
-planets = cursor.fetchall()
+planets = cursor.fetchall() #stores the results
 
 print("Exoplanets in our catalog:\n")
 

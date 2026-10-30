@@ -1,13 +1,10 @@
 
 import sqlite3
-
-# Connect to the SQLite database
 connection = sqlite3.connect("data/stellar_sights.db")
 
 cursor = connection.cursor()
 
-# Planet that exists in our catalog
-# but has no imported transit predictions
+# Planet that exists in our catalog but has no imported transit predictions
 planet_name = "55 Cnc e"
 
 # Check whether the planet exists

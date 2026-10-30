@@ -38,8 +38,7 @@ url = base_url + "?" + urlencode({
 # Download NASA data into a Pandas DataFrame
 df = pd.read_csv(url)
 
-# Request HD 209458 b so transit predictions
-# can be linked to an exoplanet in our catalog
+# Request HD 209458 b so transit predictions can be linked to an exoplanet in our catalog
 extra_query = """
 SELECT
     pl_name,
@@ -61,7 +60,7 @@ extra_df = pd.read_csv(extra_url)
 # Add the planet to our existing catalog
 df = pd.concat([df, extra_df], ignore_index=True)
 
-# Remove duplicate planet names, if any
+# Remove duplicate names, if any
 df = df.drop_duplicates(subset=["pl_name"])
 
 
@@ -96,7 +95,7 @@ df.to_sql(
     index=False
 )
 
-# Close the database connection
+# Close connection
 connection.close()
 
 print("\nSQLite database created successfully!")
@@ -106,7 +105,6 @@ print("\nSQLite database created successfully!")
 # STEP 5: Verify the SQLite database
 # -------------------------------------------------
 
-# Reopen the database
 connection = sqlite3.connect("data/stellar_sights.db")
 
 # Create a cursor for SQL queries
@@ -127,7 +125,7 @@ print("\nFirst five exoplanets stored in SQLite:")
 for planet in cursor.fetchall():
     print(planet)
 
-# Close the database connection
+
 connection.close()
 
 print("\nDatabase verification complete!")
