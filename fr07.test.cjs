@@ -1,0 +1,12 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');
+const {parseCSV,dateKey,decide,eventsForPlanet}=require('./fr07.js');
+const csv='planetname,midpointcalendar,isdefault,refname\n"HD 209458 b","10/28/2026 22:10",0,RefA\n"HD 209458 b","10/28/2026 22:11",1,RefB\n"HD 209458 b","10/27/2026 10:00",1,RefC\n"WASP-12 b","10/28/2026 22:10",1,RefD\n';const rows=parseCSV(csv);
+test('CSV parse and header mapping',()=>assert.equal(rows[0].planetname,'HD 209458 b'));
+test('valid date',()=>assert.equal(dateKey('10/28/2026 22:10'),'2026-10-28'));
+test('invalid date rejected',()=>assert.equal(dateKey('02/31/2026 10:00'),null));
+test('default reference selected for duplicate date',()=>assert.equal(eventsForPlanet(rows,'HD 209458 b')[1].refname,'RefB'));
+test('matched date returns event',()=>assert.equal(decide(rows,'HD 209458 b','2026-10-28').kind,'matches'));
+test('earlier predicted dates returned',()=>assert.equal(decide(rows,'HD 209458 b','2026-10-29').kind,'earlier-predictions'));
+test('not another planets events',()=>assert.equal(decide(rows,'WASP-12 b','2026-10-27').kind,'no-events'));
+test('no records for planet',()=>assert.equal(decide(rows,'Unknown','2026-10-28').kind,'no-events'));
+test('invalid input date',()=>assert.equal(decide(rows,'HD 209458 b','2026-02-31').kind,'invalid-date'));
