@@ -19,3 +19,62 @@ h1, h2, p {
     object-fit: cover;
     border-radius: 10px;
 }
+.map-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #39445c;
+    border-radius: 8px;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.map-link:hover {
+    background-color: #1d4ed8;
+}
+
+.map-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px auto;
+}
+
+body {
+    background-color: #080d18;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.search-box input {
+    padding: 10px;
+    background-color: #1c2638;
+    color: white;
+    border: 1px solid #39445c;
+    border-radius: 6px;
+}
+
+.search-box button {
+    padding: 10px 18px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #1d4ed8;
+}
+
+#planet-info {
+    background-color: #1c2638;
+    border: 1px solid #39445c;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 500px;
+}

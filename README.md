@@ -31,3 +31,32 @@ Edge Cases
 3. Missing CSV file: Temporarily rename the CSV file and verify that the application displays an error message when it cannot load the catalog.
 4. Missing planet image: Temporarily rename or remove an image file and verify that the application handles the missing image appropriately.
 5. Unknown planet image mapping: Search for a planet that exists in the CSV but does not have an image entry in the planetImage object. Verify that the default image appears.
+
+11/7/2026 
+- Addeded an interactive 2d map 
+- Features include:
+- Created a 2D SVG map displaying exoplanet positions using Right Ascension (RA) and Declination (Dec) coordinates from the exoplanet CSV dataset.
+- Added a grid background with an animated space GIF for a space-themed appearance.
+- Added a Solar System marker at the center of the map.
+- Added clickable exoplanet markers that display:
+- Planet name
+- Host star
+- Right Ascension
+- Declination
+- Orbital period
+- Corresponding planet image
+- Added functionality to click the Solar System marker to clear the selected planet information.
+- Added fullscreen functionality to expand the map while displaying the selected planet's information.
+- Added navigation links to connect the main Stellar Sights page and the exoplanet map.
+- UI and Styling Improvements
+- Updated the main page with a dark space-themed color scheme to match the map.
+- Added and styled an Explore Exoplanet Map button on the main page.
+- Added a Back to Home link on the map page.
+- Improved map presentation with responsive sizing and visual styling.
+- Files Added:
+- map.html – Structure of the interactive exoplanet map.
+- map.css – Styling for the map, fullscreen mode, and space-themed appearance.
+- map.js – JavaScript functionality for loading CSV data, plotting exoplanets, and handling user interactions.
+- Data Source
+- data/exoplanets.csv – Provides exoplanet names, host stars, Right Ascension, Declination, and orbital periods.
+- Note: The map is a simplified 2D visualization of celestial sky positions using RA and Dec coordinates. It does not represent the actual physical distances between exoplanets and Earth.
