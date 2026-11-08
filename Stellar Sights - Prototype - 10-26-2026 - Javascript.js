@@ -14,6 +14,10 @@ fetch('data/exoplanets.csv')
                 for (let j = 0; j < headers.length; j++) {
                     planet[headers[j]] = values[j];
                 }
+
+                planet.raNum = parseFloat(planet.ra);
+                planet.decNum = parseFloat(planet.dec);
+
                 catalog.push(planet);
             }
         }
@@ -99,6 +103,56 @@ function searchExoplanets(query) {
     return results;
 }
 
+// ========== ADDED coordinates search ==========
+
+function searchByCoordinates(raStr, decStr, threshold) {
+    threshold = threshold || 2; // default ±2 degrees
+    var results = [];
+    var ra = parseFloat(String(raStr).replace(/[^0-9.\-]/g, ''));
+    var dec = parseFloat(String(decStr).replace(/[^0-9.\-]/g, ''));
+
+    if (isNaN(ra) || isNaN(dec)) {
+        return { error: 'invalid', results: [] };
+    }
+    if (ra < 0 || ra > 360 || dec < -90 || dec > 90) {
+        return { error: 'out-of-range', results: [] };
+    }
+
+    for (var i = 0; i < catalog.length; i++) {
+        var planet = catalog[i];
+        if (isNaN(planet.raNum) || isNaN(planet.decNum)) continue;
+
+        var dRa = Math.abs(planet.raNum - ra);
+        if (dRa > 180) dRa = 360 - dRa; // wrap around
+        var dDec = Math.abs(planet.decNum - dec);
+        var dist = Math.sqrt(dRa * dRa + dDec * dDec);
+
+        if (dist <= threshold) {
+            results.push(planet);
+        }
+    }
+
+    results.sort(function (a, b) {
+        var da = Math.sqrt(Math.pow(a.raNum - ra, 2) + Math.pow(a.decNum - dec, 2));
+        var db = Math.sqrt(Math.pow(b.raNum - ra, 2) + Math.pow(b.decNum - dec, 2));
+        return da - db;
+    });
+
+    return { error: null, results: results };
+}
+// Will ONLY WORK, with both x and y coordinate FOR this specific grid
+
+function tryParseCoordinates(query) {
+    var cleaned = query.replace(/ra|dec|right|ascension|declination/gi, ' ').trim();
+    var parts = cleaned.split(/[\s,]+/).filter(function (p) { return p.length > 0; });
+    if (parts.length < 2) return null;
+    var ra = parseFloat(parts[0]);
+    var dec = parseFloat(parts[1]);
+    if (isNaN(ra) || isNaN(dec)) return null;
+    return { ra: ra, dec: dec };
+}
+// ========== END of what is ADDED ==========
+
 // Function to display search results updated to use the new catalog data structure
 function showResults(matches, query) {
     var resultsDiv = document.getElementById('results');
@@ -143,11 +197,26 @@ function showResults(matches, query) {
 function doSearch() {
     var inputBox = document.getElementById('searchInput');
     var query = inputBox.value;
+
+    // ========== ADDED (check for coordinates first) ==========
+    var coords = tryParseCoordinates(query);
+    if (coords) {
+        var result = searchByCoordinates(coords.ra, coords.dec, 2);
+        if (result.error === 'out-of-range') {
+            document.getElementById('status').innerHTML = 'Out of range.';
+            document.getElementById('results').innerHTML = '';
+            return;
+        }
+        if (result.results.length > 0) {
+            showResults(result.results, 'RA ' + coords.ra + ', Dec ' + coords.dec);
+            return;
+        }
+    }
+    // ==== END of what is ADDED ==========
+
     var matches = searchExoplanets(query);
     showResults(matches, query);
 }
-
-//button clicked do this
 
 document.getElementById('searchBtn').onclick = doSearch;
 document.getElementById('searchInput').onkeypress = function(event) {
