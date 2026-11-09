@@ -60,3 +60,6 @@ Edge Cases
 - Data Source
 - data/exoplanets.csv – Provides exoplanet names, host stars, Right Ascension, Declination, and orbital periods.
 - Note: The map is a simplified 2D visualization of celestial sky positions using RA and Dec coordinates. It does not represent the actual physical distances between exoplanets and Earth.
+
+11/8/2026
+-Updated data and scripts folders to now import prediction data for the full list of 21 exoplanets
