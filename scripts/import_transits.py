@@ -7,10 +7,25 @@ from urllib.parse import urlencode
 
 base_url = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TransitSearch/nph-transits-api"
 
-planets = [
-    "HD 209458 b",
-    "WASP-12 b"
-]
+# Connect to our SQLite database
+connection = sqlite3.connect("data/stellar_sights.db")
+cursor = connection.cursor()
+
+# Retrieve all 21 planet names
+cursor.execute("""
+SELECT pl_name
+FROM exoplanets
+ORDER BY pl_name
+""")
+
+planets = [row[0] for row in cursor.fetchall()]
+
+connection.close()
+
+print("Total planets:", len(planets))
+
+for planet in planets:
+    print(planet)
 
 columns = [
     "planetname",
@@ -38,6 +53,11 @@ for planet in planets:
     try:
         df = pd.read_csv(url)
 
+        if df.empty:
+            print("No transit predictions available for:", planet)
+            continue
+
+
         df = df[columns].copy()
 
         df["event_type"] = "predicted"
@@ -59,6 +79,10 @@ if not all_transits:
 transits = pd.concat(all_transits, ignore_index=True)
 
 print("\nTotal transit prediction records:", len(transits))
+
+# Save transit predictions to CSV for the frontend
+transits.to_csv("data/nph-transits-api.csv", index=False)
+print("Transit predictions saved to CSV file")
 
 # STEP 4: Save predictions to SQLite
 
