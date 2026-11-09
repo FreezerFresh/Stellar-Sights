@@ -63,3 +63,10 @@ Edge Cases
 
 11/8/2026
 -Updated data and scripts folders to now import prediction data for the full list of 21 exoplanets
+
+11/8/2026 - Scrum Cycle 2
+- Fr06 filter search added and map results
+- Added host-star and orbital-period range filters to the prototype search page and interactive 2D map.
+- Filters persist across both pages in the same browser tab; Clear filters restores the results.
+- Map status updates to show the number of visible exoplanet markers (for example, 1 of 20).
+- Added 12 automated FR-06 tests (6 standard and 6 edge/failure tests); event-time filtering is not yet included.

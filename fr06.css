@@ -1,0 +1,7 @@
+.fr06-panel { max-width: 880px; margin: 18px auto; padding: 16px; border: 1px solid #64748b; border-radius: 10px; box-sizing: border-box; }
+.fr06-panel h2 { font-size: 1.1rem; margin: 0 0 12px; }
+.fr06-fields { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; }
+.fr06-fields label { display: flex; flex: 1 1 160px; flex-direction: column; gap: 5px; text-align: left; font-size: .9rem; }
+.fr06-fields input { padding: 9px; border-radius: 5px; border: 1px solid #9ca3af; box-sizing: border-box; width: 100%; }
+.fr06-fields button { padding: 10px 15px; cursor: pointer; border-radius: 6px; }
+#fr06-message { margin: 12px 0 0; }
