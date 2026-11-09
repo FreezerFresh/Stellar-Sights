@@ -1,0 +1,272 @@
+/* Galaxy Theme Home page */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@500;600;700&display=swap");
+
+:root {
+    --void: #050816;
+    --deep: #0b1130;
+    --panel: rgba(17, 24, 56, 0.72);
+    --panel-solid: #111838;
+    --border: rgba(142, 152, 255, 0.2);
+    --border-strong: rgba(142, 152, 255, 0.45);
+    --text: #e9ecff;
+    --muted: #9ba5d3;
+    --violet: #7c6cff;
+    --violet-deep: #5a4ae0;
+    --cyan: #5ac9f8;
+    --gold: #ffd36b;
+    --radius: 14px;
+}
+
+/* Background: nebula + stars */
+body {
+    margin: 0;
+    padding: 24px 20px 64px;
+    min-height: 100vh;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--void);
+}
+
+/* Star field (two layers at different tile sizes for depth) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        radial-gradient(1.2px 1.2px at 20px 30px, #fff, transparent),
+        radial-gradient(1px 1px at 90px 140px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(1.5px 1.5px at 160px 60px, var(--gold), transparent),
+        radial-gradient(1px 1px at 230px 190px, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 300px 100px, rgba(180, 200, 255, 0.9), transparent),
+        radial-gradient(1.4px 1.4px at 60px 250px, #fff, transparent),
+        radial-gradient(1px 1px at 340px 280px, rgba(255, 255, 255, 0.75), transparent);
+    background-size: 380px 320px;
+    opacity: 0.75;
+}
+
+/* Typography */
+h1, h2, p {
+    text-align: center;
+}
+
+h1 {
+    font-family: "Sora", "DM Sans", Arial, sans-serif;
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+    margin: 28px 0 12px;
+    text-shadow: 0 0 32px rgba(124, 108, 255, 0.65);
+}
+
+h2 {
+    font-family: "Sora", "DM Sans", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 6px 0 8px;
+}
+
+p {
+    max-width: 62ch;
+    margin: 8px auto;
+    color: var(--muted);
+}
+
+/* Map button */
+.map-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.map-link {
+    display: inline-block;
+    padding: 12px 26px;
+    margin: 10px;
+    color: var(--text);
+    font-weight: 500;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--violet), var(--violet-deep));
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    box-shadow: 0 0 10px rgba(124, 108, 255, 0.65);
+}
+
+.map-link:hover {
+    transition: box-shadow 0.25s, transform 0.25s;
+    box-shadow: 0 0 20px rgba(124, 108, 255, 0.65);
+}
+
+/* Search bar */
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: min(640px, 100%);
+    margin: 28px auto 0;
+    padding: 8px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 500px;
+    backdrop-filter: blur(10px);
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 18px;
+    font: inherit;
+    color: var(--text);
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+}
+
+.search-box input::placeholder {
+    color: var(--muted);
+}
+
+.search-box input:focus {
+    outline: none;
+}
+
+.search-box:focus-within {
+    border-color: var(--cyan);
+}
+
+.search-box button {
+    padding: 12px 26px;
+    font: inherit;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(135deg, var(--violet), var(--violet-deep));
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.search-box button:hover {
+    transition: box-shadow 0.25s, transform 0.25s;
+    box-shadow: 0 0 15px rgba(124, 108, 255, 0.65);
+}
+
+/* Status line */
+#status {
+    text-align: center;
+    margin-top: 16px;
+    color: var(--cyan);
+    font-size: 0.95rem;
+}
+
+/* Hides "-----" divider paragraph that follows #status */
+#status + p {
+    display: none;
+}
+
+/* Results */
+#results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 28px auto 0;
+}
+
+.result {
+    padding: 16px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    backdrop-filter: blur(8px);
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+/* Clicking a result card opens the transit section from fr07-integration.js */
+.result {
+    cursor: pointer;
+}
+
+.result:hover {
+    border-color: var(--border-strong);
+    box-shadow: 0 0 20px rgba(124, 108, 255, 0.65);
+}
+
+.result p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+}
+
+/* Hides the "----------" divider paragraph at the bottom of each result */
+.result p:last-child {
+    display: none;
+}
+
+.exo_image {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: 180px;
+    margin: 0 auto 12px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: var(--deep);
+}
+
+/* Transit section */
+#transit-section {
+    max-width: 640px;
+    margin: 36px auto 0;
+    padding: 20px;
+    text-align: center;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+#transit-section label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--muted);
+}
+
+#event-date {
+    padding: 10px 14px;
+    font: inherit;
+    color: var(--text);
+    color-scheme: dark;
+    background: var(--panel-solid);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+#transit-results {
+    margin-top: 16px;
+    color: var(--text);
+}
+
+#transit-results p {
+    margin: 6px auto;
+    color: var(--text);
+}
+
+#transit-results p:first-child {
+    color: var(--cyan);
+}
+
+/* Info panel */
+#planet-info {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 16px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
