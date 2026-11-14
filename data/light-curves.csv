@@ -1,0 +1,61 @@
+planetname,time,value,source,notes
+HD 209458 b,2452763.056,1.000531,NASA Exoplanet Archive / Knutson et al. 2007,relative_flux
+HD 209458 b,2452763.139,0.988351,NASA Exoplanet Archive / Knutson et al. 2007,relative_flux
+HD 209458 b,2452763.196,0.980877,NASA Exoplanet Archive / Knutson et al. 2007,relative_flux
+HD 209458 b,2452816.093,0.985731,NASA Exoplanet Archive / Knutson et al. 2007,relative_flux
+HD 209458 b,2452816.181,1.000465,NASA Exoplanet Archive / Knutson et al. 2007,relative_flux
+HD 189733 b,2453877.719,0.999318,NASA Exoplanet Archive,relative_flux
+HD 189733 b,2453877.874,0.973961,NASA Exoplanet Archive,relative_flux
+HD 189733 b,2453877.926,1.000032,NASA Exoplanet Archive,relative_flux
+HD 189733 b,2453882.201,1.00005,NASA Exoplanet Archive,relative_flux
+HD 189733 b,2453931.24,0.999964,NASA Exoplanet Archive,relative_flux
+HAT-P-1 b,2454363.831,1.0006,NASA Exoplanet Archive,relative_flux
+HAT-P-1 b,2454363.87,0.9984,NASA Exoplanet Archive,relative_flux
+HAT-P-1 b,2454363.911,0.9903,NASA Exoplanet Archive,relative_flux
+HAT-P-1 b,2454363.949,0.988,NASA Exoplanet Archive,relative_flux
+HAT-P-1 b,2454363.987,0.9909,NASA Exoplanet Archive,relative_flux
+TrES-4 b,2454230.771,0.99944,NASA Exoplanet Archive,relative_flux
+TrES-4 b,2454230.806,1.00252,NASA Exoplanet Archive,relative_flux
+TrES-4 b,2454230.839,0.99669,NASA Exoplanet Archive,relative_flux
+TrES-4 b,2454230.871,0.99333,NASA Exoplanet Archive,relative_flux
+TrES-4 b,2454230.905,0.99272,NASA Exoplanet Archive,relative_flux
+WASP-17 b,2454592.677,0.999803,NASA Exoplanet Archive,relative_flux
+WASP-17 b,2454592.749,0.982336,NASA Exoplanet Archive,relative_flux
+WASP-17 b,2454592.837,0.98267,NASA Exoplanet Archive,relative_flux
+WASP-17 b,2454592.885,0.99745,NASA Exoplanet Archive,relative_flux
+HD 149026 b,2454269.649,1.00223,NASA Exoplanet Archive,relative_flux
+HD 149026 b,2454269.684,1.00408,NASA Exoplanet Archive,relative_flux
+HD 149026 b,2454269.718,0.99565,NASA Exoplanet Archive,relative_flux
+HD 149026 b,2454269.751,0.99878,NASA Exoplanet Archive,relative_flux
+HD 149026 b,2454269.784,0.99956,NASA Exoplanet Archive,relative_flux
+GJ 436 b,2454238.456,0.986084,NASA Exoplanet Archive,normalized_flux
+GJ 436 b,2454238.462,1.017249,NASA Exoplanet Archive,normalized_flux
+GJ 436 b,2454238.474,0.974712,NASA Exoplanet Archive,normalized_flux
+GJ 436 b,2454238.488,0.993641,NASA Exoplanet Archive,normalized_flux
+GJ 436 b,2454238.517,0.999714,NASA Exoplanet Archive,normalized_flux
+55 Cnc e,2447973.178,6.1113,NASA Exoplanet Archive / Hipparcos,magnitude
+55 Cnc e,2448152.061,6.1012,NASA Exoplanet Archive / Hipparcos,magnitude
+55 Cnc e,2448155.172,6.1117,NASA Exoplanet Archive / Hipparcos,magnitude
+HAT-P-12 b,2454897.846,0.00425,NASA Exoplanet Archive,differential_magnitude
+HAT-P-12 b,2454897.891,-0.00159,NASA Exoplanet Archive,differential_magnitude
+HAT-P-12 b,2454897.934,0.03432,NASA Exoplanet Archive,differential_magnitude
+WASP-12 b,2454022.607,0.020291,NASA Exoplanet Archive,differential_magnitude
+WASP-12 b,2454031.619,0.0069,NASA Exoplanet Archive,differential_magnitude
+WASP-12 b,2454056.559,0.011359,NASA Exoplanet Archive,differential_magnitude
+WASP-15 b,2453860.223,0.000587,NASA Exoplanet Archive,differential_magnitude
+WASP-15 b,2453862.336,-0.001181,NASA Exoplanet Archive,differential_magnitude
+WASP-15 b,2453863.334,-0.01457,NASA Exoplanet Archive,differential_magnitude
+WASP-18 b,2455084.667,0.000028,NASA Exoplanet Archive,differential_magnitude
+WASP-18 b,2455084.741,0.000252,NASA Exoplanet Archive,differential_magnitude
+WASP-18 b,2455084.817,0.011306,NASA Exoplanet Archive,differential_magnitude
+HD 80606 b,2454876.334,13.4154,NASA Exoplanet Archive,magnitude
+HD 80606 b,2454876.334,13.415,NASA Exoplanet Archive,magnitude
+HD 80606 b,2454876.334,13.4095,NASA Exoplanet Archive,magnitude
+GJ 1214 b,,,"due to lack of data of what it provided on the website, it is empty",no photometric light curve file
+HAT-P-13 b,,,"due to lack of data of what it provided on the website, it is empty",no photometric light curve file
+HAT-P-14 b,,,"due to lack of data of what it provided on the website, it is empty",no photometric light curve file
+HAT-P-17 b,,,"due to lack of data of what it provided on the website, it is empty",no photometric light curve file
+HAT-P-18 b,,,"due to lack of data of what it provided on the website, it is empty",no photometric light curve file
+HAT-P-26 b,,,"due to lack of data of what it provided on the website, it is empty",no photometric light curve file
+HAT-P-30 b,,,"due to lack of data of what it provided on the website, it is empty",no photometric light curve file
+HAT-P-32 b,,,"due to lack of data of what it provided on the website, it is empty",no photometric light curve file
