@@ -1,0 +1,12 @@
+These files are for the light curves.
+Note:
+Use the time column for the x-axis and the value column for the y-axis.
+Some planets do not have light-curve data available from NASA. For those planets, the CSV contains a note in the notes column explaining that no data was provided on the website.
+
+relative_flux - Brightness compared to the normal level of the star (1.0 = normal).
+
+normalized_flux - Same idea as relative_flux. Brightness scaled so the baseline is about 1.0.
+
+magnitude - How bright the star looks, measured in magnitudes. Higher number = dimmer star.
+
+differential_magnitude - Difference in magnitude compared to a reference. Positive or negative numbers show brighter or dimmer than the reference.
