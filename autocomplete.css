@@ -1,0 +1,18 @@
+/* Cycle 3 autocomplete — scoped to avoid changing teammates' page styles. */
+.stellar-autocomplete { position: relative; flex: 1 1 250px; max-width: 410px; min-width: 180px; }
+.stellar-autocomplete #searchInput { width: 100%; box-sizing: border-box; }
+.stellar-autocomplete-options {
+  position: absolute; z-index: 1000; top: calc(100% + 5px); left: 0; right: 0;
+  max-height: 260px; overflow-y: auto; background: #16243a;
+  border: 1px solid #64748b; border-radius: 9px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.5); padding: 4px;
+}
+.stellar-autocomplete-options[hidden] { display: none; }
+.stellar-autocomplete-option {
+  display: flex; flex-direction: column; gap: 2px; cursor: pointer; text-align: left;
+  border-radius: 6px; padding: 9px 11px; color: #f8fafc;
+}
+.stellar-autocomplete-option:hover, .stellar-autocomplete-option.is-active { background: #294a79; }
+.stellar-autocomplete-name { font-weight: 600; font-size: .95rem; }
+.stellar-autocomplete-host { color: #cbd5e1; font-size: .78rem; }
+.stellar-autocomplete-option:focus-visible { outline: 2px solid #93c5fd; }

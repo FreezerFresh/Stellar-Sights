@@ -73,3 +73,9 @@ Edge Cases
 
 11/8/2026 - Scrum Cycle 2 Sam
 - Added alternate css files for fr06, map, and home page
+11/18/2026 - Scrum Cycle 3 (Maanvir)
+- Added an autocomplete dropdown beneath the existing search bar with matching exoplanet names and their host stars.
+- Suggestions are case-insensitive and accept spaces instead of hyphens (for example, 'wasp 12' suggests WASP-12 b).
+- Selecting a suggestion runs the existing planet search and preserves the FR-06 filter and FR-07 transit integrations.
+- Supports mouse selection, Up/Down arrows, Enter, Escape, and a maximum of eight suggestions.
+- Added automated autocomplete matching and edge-case tests (`node --test autocomplete.test.cjs`).
