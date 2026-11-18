@@ -1,5 +1,9 @@
-/* Cycle 3 autocomplete — scoped to avoid changing teammates' page styles. */
-.stellar-autocomplete { position: relative; flex: 1 1 250px; max-width: 410px; min-width: 180px; }
+/* Cycle 3 autocomplete — position the suggestions above the FR-06 filter panel. */
+/* The search bar and filter panel both use backdrop-filter; each forms a stacking
+   context, so the entire search-box must be raised, not only the dropdown. */
+.search-box { position: relative; z-index: 20; }
+.fr06-panel { position: relative; z-index: 1; }
+.stellar-autocomplete { position: relative; z-index: 21; flex: 1 1 250px; max-width: 410px; min-width: 180px; }
 .stellar-autocomplete #searchInput { width: 100%; box-sizing: border-box; }
 .stellar-autocomplete-options {
   position: absolute; z-index: 1000; top: calc(100% + 5px); left: 0; right: 0;
